@@ -42,9 +42,17 @@ Dockerfile, docker-compose.yml
 pyproject.toml           deps + ruff + pytest config
 ```
 
+## Incident dataset (Phase 1)
+```bash
+uv run python data/generate_incidents.py   # writes 24 labeled incidents to data/incidents/
+uv run python app/incidents.py             # prints a summary of them
+```
+Each incident folder has `logs.jsonl`, `metrics.json`, `deploys.json`, and a
+`label.yaml` (the ground-truth root cause). 6 failure classes, 18 train / 6 test.
+
 ## Roadmap
-- [x] Phase 0 — skeleton (this)
-- [ ] Phase 1 — labeled incident dataset
+- [x] Phase 0 — skeleton
+- [x] Phase 1 — labeled incident dataset
 - [ ] Phase 2 — MCP tool servers (logs, metrics)
 - [ ] Phase 3 — LangGraph agentic loop
 - [ ] Phase 4 — eval + single-shot-vs-agent ablation

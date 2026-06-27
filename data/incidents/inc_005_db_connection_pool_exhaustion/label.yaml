@@ -1,0 +1,12 @@
+incident_id: inc_005
+root_cause: db_connection_pool_exhaustion
+service: checkout
+onset_minute: 14
+split: train
+expected_diagnosis: '''checkout'' latency and errors climbed while DB active connections
+  sat pinned at the pool max (100). Connection-pool exhaustion is the likely cause;
+  recommend raising pool size or fixing connection leaks.'
+key_signals:
+- db_active_connections saturated at 100 (the pool limit)
+- rising latency and errors (gradual, not a step)
+- '''connection pool / HikariPool timeout'' log messages'

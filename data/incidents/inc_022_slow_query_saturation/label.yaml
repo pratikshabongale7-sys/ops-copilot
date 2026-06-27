@@ -1,0 +1,12 @@
+incident_id: inc_022
+root_cause: slow_query_saturation
+service: email
+onset_minute: 15
+split: train
+expected_diagnosis: '''email'' CPU climbed toward saturation (~95%+) with rising latency
+  and slow-query warnings from minute 15. A slow/expensive query saturating resources
+  is the likely cause; recommend query/index optimization.'
+key_signals:
+- cpu_pct ramps to near 100% (saturation)
+- rising latency correlated with CPU
+- '''slow query'' warnings in logs'

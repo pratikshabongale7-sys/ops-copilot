@@ -1,0 +1,26 @@
+{"ts": "2026-03-03T12:00:00+00:00", "level": "INFO", "service": "currency", "message": "health check ok"}
+{"ts": "2026-03-03T12:00:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-03T12:00:00+00:00", "level": "INFO", "service": "product-catalog", "message": "processed message"}
+{"ts": "2026-03-03T12:05:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-03T12:05:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-03T12:05:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-03T12:10:00+00:00", "level": "INFO", "service": "currency", "message": "cache hit"}
+{"ts": "2026-03-03T12:10:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-03T12:10:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-03T12:15:00+00:00", "level": "INFO", "service": "currency", "message": "health check ok"}
+{"ts": "2026-03-03T12:15:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-03T12:15:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-03T12:16:00+00:00", "level": "ERROR", "service": "currency", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-03T12:16:00+00:00", "level": "ERROR", "service": "currency", "message": "NullPointerException in CurrencyHandler.process()"}
+{"ts": "2026-03-03T12:20:00+00:00", "level": "INFO", "service": "currency", "message": "health check ok"}
+{"ts": "2026-03-03T12:20:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-03T12:20:00+00:00", "level": "INFO", "service": "product-catalog", "message": "processed message"}
+{"ts": "2026-03-03T12:23:00+00:00", "level": "ERROR", "service": "currency", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-03T12:23:00+00:00", "level": "ERROR", "service": "currency", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-03T12:24:00+00:00", "level": "ERROR", "service": "currency", "message": "NullPointerException in CurrencyHandler.process()"}
+{"ts": "2026-03-03T12:24:00+00:00", "level": "ERROR", "service": "currency", "message": "NullPointerException in CurrencyHandler.process()"}
+{"ts": "2026-03-03T12:25:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-03T12:25:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-03T12:25:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-03T12:29:00+00:00", "level": "ERROR", "service": "currency", "message": "unhandled exception while serving request"}
+{"ts": "2026-03-03T12:29:00+00:00", "level": "ERROR", "service": "currency", "message": "unhandled exception while serving request"}

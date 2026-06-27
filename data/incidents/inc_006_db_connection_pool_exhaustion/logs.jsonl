@@ -1,0 +1,26 @@
+{"ts": "2026-03-06T14:00:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-06T14:00:00+00:00", "level": "INFO", "service": "shipping", "message": "health check ok"}
+{"ts": "2026-03-06T14:00:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-06T14:05:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-06T14:05:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-06T14:05:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-06T14:09:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "HikariPool-1 - Connection is not available, request timed out after 30000ms"}
+{"ts": "2026-03-06T14:10:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-06T14:10:00+00:00", "level": "INFO", "service": "shipping", "message": "cache hit"}
+{"ts": "2026-03-06T14:10:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-06T14:11:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "HikariPool-1 - Connection is not available, request timed out after 30000ms"}
+{"ts": "2026-03-06T14:15:00+00:00", "level": "INFO", "service": "product-catalog", "message": "cache hit"}
+{"ts": "2026-03-06T14:15:00+00:00", "level": "INFO", "service": "shipping", "message": "cache hit"}
+{"ts": "2026-03-06T14:15:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-06T14:15:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-06T14:17:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-06T14:18:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-06T14:20:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-06T14:20:00+00:00", "level": "INFO", "service": "shipping", "message": "processed message"}
+{"ts": "2026-03-06T14:20:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-06T14:25:00+00:00", "level": "INFO", "service": "product-catalog", "message": "processed message"}
+{"ts": "2026-03-06T14:25:00+00:00", "level": "INFO", "service": "shipping", "message": "cache hit"}
+{"ts": "2026-03-06T14:25:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-06T14:25:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-06T14:28:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "Timeout acquiring JDBC connection from pool"}
+{"ts": "2026-03-06T14:28:00+00:00", "level": "ERROR", "service": "product-catalog", "message": "Timeout acquiring JDBC connection from pool"}

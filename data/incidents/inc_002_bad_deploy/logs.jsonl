@@ -1,0 +1,26 @@
+{"ts": "2026-03-02T11:00:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-02T11:00:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-02T11:00:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-02T11:05:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-02T11:05:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-02T11:05:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-02T11:10:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-02T11:10:00+00:00", "level": "INFO", "service": "payment", "message": "cache hit"}
+{"ts": "2026-03-02T11:10:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-02T11:12:00+00:00", "level": "ERROR", "service": "frontend", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-02T11:13:00+00:00", "level": "ERROR", "service": "frontend", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-02T11:14:00+00:00", "level": "ERROR", "service": "frontend", "message": "unhandled exception while serving request"}
+{"ts": "2026-03-02T11:15:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-02T11:15:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-02T11:15:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-02T11:17:00+00:00", "level": "ERROR", "service": "frontend", "message": "NullPointerException in FrontendHandler.process()"}
+{"ts": "2026-03-02T11:20:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-02T11:20:00+00:00", "level": "INFO", "service": "payment", "message": "cache hit"}
+{"ts": "2026-03-02T11:20:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-02T11:20:00+00:00", "level": "ERROR", "service": "frontend", "message": "NullPointerException in FrontendHandler.process()"}
+{"ts": "2026-03-02T11:25:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-02T11:25:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-02T11:25:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-02T11:27:00+00:00", "level": "ERROR", "service": "frontend", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-02T11:29:00+00:00", "level": "ERROR", "service": "frontend", "message": "NullPointerException in FrontendHandler.process()"}
+{"ts": "2026-03-02T11:29:00+00:00", "level": "ERROR", "service": "frontend", "message": "NullPointerException in FrontendHandler.process()"}

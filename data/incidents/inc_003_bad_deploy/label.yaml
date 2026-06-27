@@ -1,0 +1,12 @@
+incident_id: inc_003
+root_cause: bad_deploy
+service: currency
+onset_minute: 16
+split: train
+expected_diagnosis: Error rate on 'currency' jumped ~281x within minutes of deploy
+  v1.3.2 at 2026-03-03T12:16:00+00:00. The new release is the likely cause; recommend
+  rolling back v1.3.2.
+key_signals:
+- error_rate step-change at minute 16
+- deploy of currency v1.3.2 at the same time
+- new exception type appears in logs

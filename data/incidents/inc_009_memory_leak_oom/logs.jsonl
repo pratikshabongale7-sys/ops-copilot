@@ -1,0 +1,26 @@
+{"ts": "2026-03-09T15:00:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-09T15:00:00+00:00", "level": "INFO", "service": "product-catalog", "message": "health check ok"}
+{"ts": "2026-03-09T15:00:00+00:00", "level": "INFO", "service": "checkout", "message": "health check ok"}
+{"ts": "2026-03-09T15:05:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-09T15:05:00+00:00", "level": "INFO", "service": "product-catalog", "message": "health check ok"}
+{"ts": "2026-03-09T15:05:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-09T15:10:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-09T15:10:00+00:00", "level": "INFO", "service": "product-catalog", "message": "processed message"}
+{"ts": "2026-03-09T15:10:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-09T15:15:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-09T15:15:00+00:00", "level": "INFO", "service": "product-catalog", "message": "processed message"}
+{"ts": "2026-03-09T15:15:00+00:00", "level": "INFO", "service": "checkout", "message": "health check ok"}
+{"ts": "2026-03-09T15:20:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-09T15:20:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-09T15:20:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-09T15:25:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-09T15:25:00+00:00", "level": "INFO", "service": "product-catalog", "message": "cache hit"}
+{"ts": "2026-03-09T15:25:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-09T15:27:00+00:00", "level": "ERROR", "service": "email", "message": "java.lang.OutOfMemoryError: Java heap space"}
+{"ts": "2026-03-09T15:28:00+00:00", "level": "ERROR", "service": "email", "message": "Container killed due to OOMKilled (exit code 137)"}
+{"ts": "2026-03-09T15:28:00+00:00", "level": "ERROR", "service": "email", "message": "Container killed due to OOMKilled (exit code 137)"}
+{"ts": "2026-03-09T15:28:00+00:00", "level": "ERROR", "service": "email", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-09T15:29:00+00:00", "level": "ERROR", "service": "email", "message": "Container killed due to OOMKilled (exit code 137)"}
+{"ts": "2026-03-09T15:29:00+00:00", "level": "ERROR", "service": "email", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-09T15:29:00+00:00", "level": "ERROR", "service": "email", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-09T15:29:00+00:00", "level": "ERROR", "service": "email", "message": "Container killed due to OOMKilled (exit code 137)"}

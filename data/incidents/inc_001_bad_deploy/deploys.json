@@ -1,0 +1,20 @@
+[
+  {
+    "ts": "2026-03-01T07:02:00+00:00",
+    "service": "payment",
+    "version": "v2.1.4",
+    "change": "code release"
+  },
+  {
+    "ts": "2026-03-01T07:06:00+00:00",
+    "service": "frontend",
+    "version": "v2.1.4",
+    "change": "code release"
+  },
+  {
+    "ts": "2026-03-01T07:08:00+00:00",
+    "service": "checkout",
+    "version": "v1.6.3",
+    "change": "code release"
+  }
+]

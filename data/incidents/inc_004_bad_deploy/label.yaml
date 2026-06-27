@@ -1,0 +1,12 @@
+incident_id: inc_004
+root_cause: bad_deploy
+service: shipping
+onset_minute: 14
+split: test
+expected_diagnosis: Error rate on 'shipping' jumped ~15x within minutes of deploy
+  v1.9.4 at 2026-03-04T02:14:00+00:00. The new release is the likely cause; recommend
+  rolling back v1.9.4.
+key_signals:
+- error_rate step-change at minute 14
+- deploy of shipping v1.9.4 at the same time
+- new exception type appears in logs

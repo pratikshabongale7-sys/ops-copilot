@@ -1,0 +1,26 @@
+{"ts": "2026-03-04T02:00:00+00:00", "level": "INFO", "service": "shipping", "message": "cache hit"}
+{"ts": "2026-03-04T02:00:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-04T02:00:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-04T02:05:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-04T02:05:00+00:00", "level": "INFO", "service": "cart", "message": "processed message"}
+{"ts": "2026-03-04T02:05:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-04T02:10:00+00:00", "level": "INFO", "service": "shipping", "message": "health check ok"}
+{"ts": "2026-03-04T02:10:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-04T02:10:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-04T02:15:00+00:00", "level": "INFO", "service": "shipping", "message": "cache hit"}
+{"ts": "2026-03-04T02:15:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-04T02:15:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-04T02:17:00+00:00", "level": "ERROR", "service": "shipping", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-04T02:18:00+00:00", "level": "ERROR", "service": "shipping", "message": "unhandled exception while serving request"}
+{"ts": "2026-03-04T02:20:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-04T02:20:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-04T02:20:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-04T02:22:00+00:00", "level": "ERROR", "service": "shipping", "message": "NullPointerException in ShippingHandler.process()"}
+{"ts": "2026-03-04T02:25:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-04T02:25:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-04T02:25:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-04T02:26:00+00:00", "level": "ERROR", "service": "shipping", "message": "NullPointerException in ShippingHandler.process()"}
+{"ts": "2026-03-04T02:26:00+00:00", "level": "ERROR", "service": "shipping", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-04T02:27:00+00:00", "level": "ERROR", "service": "shipping", "message": "NullPointerException in ShippingHandler.process()"}
+{"ts": "2026-03-04T02:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "unhandled exception while serving request"}
+{"ts": "2026-03-04T02:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "NullPointerException in ShippingHandler.process()"}

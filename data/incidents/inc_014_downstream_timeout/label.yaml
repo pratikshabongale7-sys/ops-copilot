@@ -1,0 +1,13 @@
+incident_id: inc_014
+root_cause: downstream_timeout
+service: checkout
+onset_minute: 11
+split: train
+expected_diagnosis: '''checkout'' latency jumped and errors rose because calls to
+  its dependency ''frontend'' started timing out around minute 11. Root cause is downstream
+  ''frontend'', not ''checkout'' itself.'
+key_signals:
+- latency step-change on checkout at minute 11
+- logs name 'frontend' as the slow/timing-out dependency
+- the symptom service is the caller, not the true cause
+true_dependency: frontend

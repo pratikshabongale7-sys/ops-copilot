@@ -1,0 +1,26 @@
+{"ts": "2026-03-23T00:00:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-23T00:00:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-23T00:00:00+00:00", "level": "INFO", "service": "product-catalog", "message": "health check ok"}
+{"ts": "2026-03-23T00:05:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-23T00:05:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-23T00:05:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-23T00:09:00+00:00", "level": "WARN", "service": "email", "message": "query exceeded threshold (2000ms)"}
+{"ts": "2026-03-23T00:10:00+00:00", "level": "INFO", "service": "email", "message": "cache hit"}
+{"ts": "2026-03-23T00:10:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-23T00:10:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-23T00:10:00+00:00", "level": "WARN", "service": "email", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-23T00:10:00+00:00", "level": "WARN", "service": "email", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-23T00:13:00+00:00", "level": "WARN", "service": "email", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-23T00:15:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-23T00:15:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-23T00:15:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-23T00:16:00+00:00", "level": "WARN", "service": "email", "message": "query exceeded threshold (2000ms)"}
+{"ts": "2026-03-23T00:17:00+00:00", "level": "WARN", "service": "email", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-23T00:20:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-23T00:20:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-23T00:20:00+00:00", "level": "INFO", "service": "product-catalog", "message": "processed message"}
+{"ts": "2026-03-23T00:24:00+00:00", "level": "WARN", "service": "email", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-23T00:25:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-23T00:25:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-23T00:25:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-23T00:29:00+00:00", "level": "WARN", "service": "email", "message": "Slow query detected: SELECT ... took 3280ms"}

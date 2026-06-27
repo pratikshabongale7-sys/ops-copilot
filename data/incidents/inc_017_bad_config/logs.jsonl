@@ -1,0 +1,26 @@
+{"ts": "2026-03-17T06:00:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-17T06:00:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-17T06:00:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-17T06:05:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-17T06:05:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-17T06:05:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-17T06:10:00+00:00", "level": "INFO", "service": "cart", "message": "health check ok"}
+{"ts": "2026-03-17T06:10:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-17T06:10:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-17T06:11:00+00:00", "level": "ERROR", "service": "cart", "message": "Failed to initialize application context"}
+{"ts": "2026-03-17T06:12:00+00:00", "level": "ERROR", "service": "cart", "message": "FATAL: invalid configuration, shutting down"}
+{"ts": "2026-03-17T06:15:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-17T06:15:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-17T06:15:00+00:00", "level": "INFO", "service": "currency", "message": "cache hit"}
+{"ts": "2026-03-17T06:15:00+00:00", "level": "ERROR", "service": "cart", "message": "Failed to initialize application context"}
+{"ts": "2026-03-17T06:17:00+00:00", "level": "ERROR", "service": "cart", "message": "Configuration error: required environment variable DB_URL is not set"}
+{"ts": "2026-03-17T06:20:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-17T06:20:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-17T06:20:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-17T06:21:00+00:00", "level": "ERROR", "service": "cart", "message": "Configuration error: required environment variable DB_URL is not set"}
+{"ts": "2026-03-17T06:22:00+00:00", "level": "ERROR", "service": "cart", "message": "Configuration error: required environment variable DB_URL is not set"}
+{"ts": "2026-03-17T06:22:00+00:00", "level": "ERROR", "service": "cart", "message": "Configuration error: required environment variable DB_URL is not set"}
+{"ts": "2026-03-17T06:25:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-17T06:25:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-17T06:25:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-17T06:25:00+00:00", "level": "ERROR", "service": "cart", "message": "Failed to initialize application context"}

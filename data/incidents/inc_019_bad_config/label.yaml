@@ -1,0 +1,12 @@
+incident_id: inc_019
+root_cause: bad_config
+service: shipping
+onset_minute: 12
+split: train
+expected_diagnosis: '''shipping'' began failing almost all requests right after a
+  config update (v1.4.4) at minute 12; logs show a missing/invalid env var. Root cause
+  is the bad configuration change; recommend reverting it.'
+key_signals:
+- near-total failure (very high error rate) with a sharp onset
+- a config-change deploy (v1.4.4) at the onset
+- '''configuration error / missing env var'' in logs'

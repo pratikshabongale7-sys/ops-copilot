@@ -1,0 +1,26 @@
+{"ts": "2026-03-24T07:00:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-24T07:00:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-24T07:00:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-24T07:05:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-24T07:05:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-24T07:05:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-24T07:10:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-24T07:10:00+00:00", "level": "INFO", "service": "cart", "message": "health check ok"}
+{"ts": "2026-03-24T07:10:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-24T07:15:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-24T07:15:00+00:00", "level": "INFO", "service": "cart", "message": "processed message"}
+{"ts": "2026-03-24T07:15:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-24T07:15:00+00:00", "level": "WARN", "service": "currency", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-24T07:15:00+00:00", "level": "WARN", "service": "currency", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-24T07:15:00+00:00", "level": "WARN", "service": "currency", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-24T07:19:00+00:00", "level": "WARN", "service": "currency", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-24T07:19:00+00:00", "level": "WARN", "service": "currency", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-24T07:19:00+00:00", "level": "WARN", "service": "currency", "message": "query exceeded threshold (2000ms)"}
+{"ts": "2026-03-24T07:20:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-24T07:20:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-24T07:20:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-24T07:24:00+00:00", "level": "WARN", "service": "currency", "message": "query exceeded threshold (2000ms)"}
+{"ts": "2026-03-24T07:25:00+00:00", "level": "INFO", "service": "currency", "message": "health check ok"}
+{"ts": "2026-03-24T07:25:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-24T07:25:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-24T07:29:00+00:00", "level": "WARN", "service": "currency", "message": "CPU saturation: throttling requests"}

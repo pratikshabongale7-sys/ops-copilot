@@ -1,0 +1,14 @@
+[
+  {
+    "ts": "2026-03-17T06:01:00+00:00",
+    "service": "product-catalog",
+    "version": "v2.3.3",
+    "change": "code release"
+  },
+  {
+    "ts": "2026-03-17T06:11:00+00:00",
+    "service": "cart",
+    "version": "v1.5.0",
+    "change": "config update"
+  }
+]

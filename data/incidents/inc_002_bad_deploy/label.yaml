@@ -1,0 +1,12 @@
+incident_id: inc_002
+root_cause: bad_deploy
+service: frontend
+onset_minute: 12
+split: train
+expected_diagnosis: Error rate on 'frontend' jumped ~53x within minutes of deploy
+  v1.4.7 at 2026-03-02T11:12:00+00:00. The new release is the likely cause; recommend
+  rolling back v1.4.7.
+key_signals:
+- error_rate step-change at minute 12
+- deploy of frontend v1.4.7 at the same time
+- new exception type appears in logs

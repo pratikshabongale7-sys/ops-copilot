@@ -1,0 +1,26 @@
+{"ts": "2026-03-01T07:00:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-01T07:00:00+00:00", "level": "INFO", "service": "product-catalog", "message": "cache hit"}
+{"ts": "2026-03-01T07:00:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-01T07:05:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-01T07:05:00+00:00", "level": "INFO", "service": "product-catalog", "message": "health check ok"}
+{"ts": "2026-03-01T07:05:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-01T07:10:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-01T07:10:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-01T07:10:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-01T07:10:00+00:00", "level": "ERROR", "service": "checkout", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-01T07:12:00+00:00", "level": "ERROR", "service": "checkout", "message": "unhandled exception while serving request"}
+{"ts": "2026-03-01T07:15:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-01T07:15:00+00:00", "level": "INFO", "service": "product-catalog", "message": "health check ok"}
+{"ts": "2026-03-01T07:15:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-01T07:16:00+00:00", "level": "ERROR", "service": "checkout", "message": "NullPointerException in CheckoutHandler.process()"}
+{"ts": "2026-03-01T07:18:00+00:00", "level": "ERROR", "service": "checkout", "message": "HTTP 500 Internal Server Error"}
+{"ts": "2026-03-01T07:20:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-01T07:20:00+00:00", "level": "INFO", "service": "product-catalog", "message": "cache hit"}
+{"ts": "2026-03-01T07:20:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-01T07:22:00+00:00", "level": "ERROR", "service": "checkout", "message": "NullPointerException in CheckoutHandler.process()"}
+{"ts": "2026-03-01T07:22:00+00:00", "level": "ERROR", "service": "checkout", "message": "unhandled exception while serving request"}
+{"ts": "2026-03-01T07:25:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-01T07:25:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-01T07:25:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-01T07:28:00+00:00", "level": "ERROR", "service": "checkout", "message": "NullPointerException in CheckoutHandler.process()"}
+{"ts": "2026-03-01T07:29:00+00:00", "level": "ERROR", "service": "checkout", "message": "unhandled exception while serving request"}

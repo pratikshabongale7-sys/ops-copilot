@@ -1,0 +1,13 @@
+incident_id: inc_013
+root_cause: downstream_timeout
+service: payment
+onset_minute: 15
+split: train
+expected_diagnosis: '''payment'' latency jumped and errors rose because calls to its
+  dependency ''cart'' started timing out around minute 15. Root cause is downstream
+  ''cart'', not ''payment'' itself.'
+key_signals:
+- latency step-change on payment at minute 15
+- logs name 'cart' as the slow/timing-out dependency
+- the symptom service is the caller, not the true cause
+true_dependency: cart

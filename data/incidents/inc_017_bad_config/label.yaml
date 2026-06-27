@@ -1,0 +1,12 @@
+incident_id: inc_017
+root_cause: bad_config
+service: cart
+onset_minute: 11
+split: train
+expected_diagnosis: '''cart'' began failing almost all requests right after a config
+  update (v1.5.0) at minute 11; logs show a missing/invalid env var. Root cause is
+  the bad configuration change; recommend reverting it.'
+key_signals:
+- near-total failure (very high error rate) with a sharp onset
+- a config-change deploy (v1.5.0) at the onset
+- '''configuration error / missing env var'' in logs'

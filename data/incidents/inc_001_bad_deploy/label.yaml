@@ -1,0 +1,12 @@
+incident_id: inc_001
+root_cause: bad_deploy
+service: checkout
+onset_minute: 8
+split: train
+expected_diagnosis: Error rate on 'checkout' jumped ~11x within minutes of deploy
+  v1.6.3 at 2026-03-01T07:08:00+00:00. The new release is the likely cause; recommend
+  rolling back v1.6.3.
+key_signals:
+- error_rate step-change at minute 8
+- deploy of checkout v1.6.3 at the same time
+- new exception type appears in logs

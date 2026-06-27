@@ -1,0 +1,14 @@
+[
+  {
+    "ts": "2026-03-08T10:01:00+00:00",
+    "service": "frontend",
+    "version": "v2.2.0",
+    "change": "code release"
+  },
+  {
+    "ts": "2026-03-08T10:05:00+00:00",
+    "service": "cart",
+    "version": "v2.1.6",
+    "change": "code release"
+  }
+]

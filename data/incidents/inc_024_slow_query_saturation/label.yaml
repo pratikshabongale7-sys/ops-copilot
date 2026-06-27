@@ -1,0 +1,12 @@
+incident_id: inc_024
+root_cause: slow_query_saturation
+service: currency
+onset_minute: 12
+split: test
+expected_diagnosis: '''currency'' CPU climbed toward saturation (~95%+) with rising
+  latency and slow-query warnings from minute 12. A slow/expensive query saturating
+  resources is the likely cause; recommend query/index optimization.'
+key_signals:
+- cpu_pct ramps to near 100% (saturation)
+- rising latency correlated with CPU
+- '''slow query'' warnings in logs'

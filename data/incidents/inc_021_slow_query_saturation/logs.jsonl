@@ -1,0 +1,26 @@
+{"ts": "2026-03-21T09:00:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-21T09:00:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-21T09:00:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-21T09:05:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-21T09:05:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-21T09:05:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-21T09:10:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-21T09:10:00+00:00", "level": "INFO", "service": "checkout", "message": "health check ok"}
+{"ts": "2026-03-21T09:10:00+00:00", "level": "INFO", "service": "currency", "message": "cache hit"}
+{"ts": "2026-03-21T09:11:00+00:00", "level": "WARN", "service": "payment", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-21T09:15:00+00:00", "level": "INFO", "service": "payment", "message": "cache hit"}
+{"ts": "2026-03-21T09:15:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-21T09:15:00+00:00", "level": "INFO", "service": "currency", "message": "processed message"}
+{"ts": "2026-03-21T09:19:00+00:00", "level": "WARN", "service": "payment", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-21T09:20:00+00:00", "level": "INFO", "service": "payment", "message": "cache hit"}
+{"ts": "2026-03-21T09:20:00+00:00", "level": "INFO", "service": "checkout", "message": "health check ok"}
+{"ts": "2026-03-21T09:20:00+00:00", "level": "INFO", "service": "currency", "message": "health check ok"}
+{"ts": "2026-03-21T09:23:00+00:00", "level": "WARN", "service": "payment", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-21T09:25:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-21T09:25:00+00:00", "level": "INFO", "service": "checkout", "message": "cache hit"}
+{"ts": "2026-03-21T09:25:00+00:00", "level": "INFO", "service": "currency", "message": "request handled"}
+{"ts": "2026-03-21T09:26:00+00:00", "level": "WARN", "service": "payment", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-21T09:28:00+00:00", "level": "WARN", "service": "payment", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-21T09:28:00+00:00", "level": "WARN", "service": "payment", "message": "Slow query detected: SELECT ... took 3280ms"}
+{"ts": "2026-03-21T09:29:00+00:00", "level": "WARN", "service": "payment", "message": "CPU saturation: throttling requests"}
+{"ts": "2026-03-21T09:29:00+00:00", "level": "WARN", "service": "payment", "message": "query exceeded threshold (2000ms)"}

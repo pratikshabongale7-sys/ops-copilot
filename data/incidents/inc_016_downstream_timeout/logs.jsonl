@@ -1,0 +1,26 @@
+{"ts": "2026-03-16T16:00:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-16T16:00:00+00:00", "level": "INFO", "service": "cart", "message": "processed message"}
+{"ts": "2026-03-16T16:00:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-16T16:05:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-16T16:05:00+00:00", "level": "INFO", "service": "cart", "message": "health check ok"}
+{"ts": "2026-03-16T16:05:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-16T16:10:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-16T16:10:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-16T16:10:00+00:00", "level": "INFO", "service": "email", "message": "cache hit"}
+{"ts": "2026-03-16T16:14:00+00:00", "level": "ERROR", "service": "frontend", "message": "Timeout calling downstream service 'email' after 5000ms"}
+{"ts": "2026-03-16T16:15:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-16T16:15:00+00:00", "level": "INFO", "service": "cart", "message": "processed message"}
+{"ts": "2026-03-16T16:15:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-16T16:17:00+00:00", "level": "ERROR", "service": "frontend", "message": "Timeout calling downstream service 'email' after 5000ms"}
+{"ts": "2026-03-16T16:17:00+00:00", "level": "ERROR", "service": "frontend", "message": "upstream request to email timed out"}
+{"ts": "2026-03-16T16:19:00+00:00", "level": "ERROR", "service": "frontend", "message": "Timeout calling downstream service 'email' after 5000ms"}
+{"ts": "2026-03-16T16:20:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-16T16:20:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-16T16:20:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-16T16:20:00+00:00", "level": "ERROR", "service": "frontend", "message": "upstream request to email timed out"}
+{"ts": "2026-03-16T16:21:00+00:00", "level": "ERROR", "service": "frontend", "message": "circuit breaker OPEN for email"}
+{"ts": "2026-03-16T16:25:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-16T16:25:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-16T16:25:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-16T16:28:00+00:00", "level": "ERROR", "service": "frontend", "message": "Timeout calling downstream service 'email' after 5000ms"}
+{"ts": "2026-03-16T16:29:00+00:00", "level": "ERROR", "service": "frontend", "message": "upstream request to email timed out"}

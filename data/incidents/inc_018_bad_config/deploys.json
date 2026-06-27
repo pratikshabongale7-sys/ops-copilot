@@ -1,0 +1,14 @@
+[
+  {
+    "ts": "2026-03-18T04:03:00+00:00",
+    "service": "currency",
+    "version": "v2.1.0",
+    "change": "code release"
+  },
+  {
+    "ts": "2026-03-18T04:09:00+00:00",
+    "service": "cart",
+    "version": "v1.9.0",
+    "change": "config update"
+  }
+]

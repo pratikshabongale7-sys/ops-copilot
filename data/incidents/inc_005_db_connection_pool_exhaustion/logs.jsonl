@@ -1,0 +1,26 @@
+{"ts": "2026-03-05T18:00:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-05T18:00:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-05T18:00:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-05T18:05:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-05T18:05:00+00:00", "level": "INFO", "service": "email", "message": "cache hit"}
+{"ts": "2026-03-05T18:05:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-05T18:10:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-05T18:10:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-05T18:10:00+00:00", "level": "INFO", "service": "cart", "message": "request handled"}
+{"ts": "2026-03-05T18:15:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-05T18:15:00+00:00", "level": "INFO", "service": "email", "message": "cache hit"}
+{"ts": "2026-03-05T18:15:00+00:00", "level": "INFO", "service": "cart", "message": "cache hit"}
+{"ts": "2026-03-05T18:17:00+00:00", "level": "ERROR", "service": "checkout", "message": "HikariPool-1 - Connection is not available, request timed out after 30000ms"}
+{"ts": "2026-03-05T18:19:00+00:00", "level": "ERROR", "service": "checkout", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-05T18:19:00+00:00", "level": "ERROR", "service": "checkout", "message": "HikariPool-1 - Connection is not available, request timed out after 30000ms"}
+{"ts": "2026-03-05T18:19:00+00:00", "level": "ERROR", "service": "checkout", "message": "Timeout acquiring JDBC connection from pool"}
+{"ts": "2026-03-05T18:20:00+00:00", "level": "INFO", "service": "checkout", "message": "processed message"}
+{"ts": "2026-03-05T18:20:00+00:00", "level": "INFO", "service": "email", "message": "cache hit"}
+{"ts": "2026-03-05T18:20:00+00:00", "level": "INFO", "service": "cart", "message": "processed message"}
+{"ts": "2026-03-05T18:21:00+00:00", "level": "ERROR", "service": "checkout", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-05T18:24:00+00:00", "level": "ERROR", "service": "checkout", "message": "could not get a connection from the pool"}
+{"ts": "2026-03-05T18:24:00+00:00", "level": "ERROR", "service": "checkout", "message": "Timeout acquiring JDBC connection from pool"}
+{"ts": "2026-03-05T18:25:00+00:00", "level": "INFO", "service": "checkout", "message": "request handled"}
+{"ts": "2026-03-05T18:25:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-05T18:25:00+00:00", "level": "INFO", "service": "cart", "message": "processed message"}
+{"ts": "2026-03-05T18:27:00+00:00", "level": "ERROR", "service": "checkout", "message": "could not get a connection from the pool"}

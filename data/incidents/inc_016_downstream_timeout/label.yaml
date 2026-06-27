@@ -1,0 +1,13 @@
+incident_id: inc_016
+root_cause: downstream_timeout
+service: frontend
+onset_minute: 13
+split: test
+expected_diagnosis: '''frontend'' latency jumped and errors rose because calls to
+  its dependency ''email'' started timing out around minute 13. Root cause is downstream
+  ''email'', not ''frontend'' itself.'
+key_signals:
+- latency step-change on frontend at minute 13
+- logs name 'email' as the slow/timing-out dependency
+- the symptom service is the caller, not the true cause
+true_dependency: email

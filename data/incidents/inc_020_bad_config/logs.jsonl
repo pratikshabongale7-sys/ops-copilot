@@ -1,0 +1,26 @@
+{"ts": "2026-03-20T09:00:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-20T09:00:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-20T09:00:00+00:00", "level": "INFO", "service": "frontend", "message": "health check ok"}
+{"ts": "2026-03-20T09:05:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-20T09:05:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-20T09:05:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-20T09:10:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-20T09:10:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-20T09:10:00+00:00", "level": "INFO", "service": "frontend", "message": "processed message"}
+{"ts": "2026-03-20T09:12:00+00:00", "level": "ERROR", "service": "email", "message": "Configuration error: required environment variable DB_URL is not set"}
+{"ts": "2026-03-20T09:14:00+00:00", "level": "ERROR", "service": "email", "message": "Failed to initialize application context"}
+{"ts": "2026-03-20T09:15:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-20T09:15:00+00:00", "level": "INFO", "service": "payment", "message": "processed message"}
+{"ts": "2026-03-20T09:15:00+00:00", "level": "INFO", "service": "frontend", "message": "cache hit"}
+{"ts": "2026-03-20T09:17:00+00:00", "level": "ERROR", "service": "email", "message": "FATAL: invalid configuration, shutting down"}
+{"ts": "2026-03-20T09:17:00+00:00", "level": "ERROR", "service": "email", "message": "Configuration error: required environment variable DB_URL is not set"}
+{"ts": "2026-03-20T09:18:00+00:00", "level": "ERROR", "service": "email", "message": "FATAL: invalid configuration, shutting down"}
+{"ts": "2026-03-20T09:18:00+00:00", "level": "ERROR", "service": "email", "message": "FATAL: invalid configuration, shutting down"}
+{"ts": "2026-03-20T09:20:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-20T09:20:00+00:00", "level": "INFO", "service": "payment", "message": "health check ok"}
+{"ts": "2026-03-20T09:20:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-20T09:23:00+00:00", "level": "ERROR", "service": "email", "message": "Failed to initialize application context"}
+{"ts": "2026-03-20T09:25:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-20T09:25:00+00:00", "level": "INFO", "service": "payment", "message": "request handled"}
+{"ts": "2026-03-20T09:25:00+00:00", "level": "INFO", "service": "frontend", "message": "request handled"}
+{"ts": "2026-03-20T09:29:00+00:00", "level": "ERROR", "service": "email", "message": "Failed to initialize application context"}

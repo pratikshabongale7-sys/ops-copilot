@@ -1,0 +1,26 @@
+{"ts": "2026-03-11T13:00:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-11T13:00:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-11T13:00:00+00:00", "level": "INFO", "service": "email", "message": "cache hit"}
+{"ts": "2026-03-11T13:05:00+00:00", "level": "INFO", "service": "shipping", "message": "health check ok"}
+{"ts": "2026-03-11T13:05:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-11T13:05:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-11T13:10:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-11T13:10:00+00:00", "level": "INFO", "service": "product-catalog", "message": "cache hit"}
+{"ts": "2026-03-11T13:10:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-11T13:15:00+00:00", "level": "INFO", "service": "shipping", "message": "processed message"}
+{"ts": "2026-03-11T13:15:00+00:00", "level": "INFO", "service": "product-catalog", "message": "cache hit"}
+{"ts": "2026-03-11T13:15:00+00:00", "level": "INFO", "service": "email", "message": "request handled"}
+{"ts": "2026-03-11T13:20:00+00:00", "level": "INFO", "service": "shipping", "message": "health check ok"}
+{"ts": "2026-03-11T13:20:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-11T13:20:00+00:00", "level": "INFO", "service": "email", "message": "health check ok"}
+{"ts": "2026-03-11T13:25:00+00:00", "level": "INFO", "service": "shipping", "message": "request handled"}
+{"ts": "2026-03-11T13:25:00+00:00", "level": "INFO", "service": "product-catalog", "message": "request handled"}
+{"ts": "2026-03-11T13:25:00+00:00", "level": "INFO", "service": "email", "message": "processed message"}
+{"ts": "2026-03-11T13:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-11T13:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "java.lang.OutOfMemoryError: Java heap space"}
+{"ts": "2026-03-11T13:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-11T13:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "Container killed due to OOMKilled (exit code 137)"}
+{"ts": "2026-03-11T13:28:00+00:00", "level": "ERROR", "service": "shipping", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-11T13:29:00+00:00", "level": "ERROR", "service": "shipping", "message": "pod restarted: memory limit exceeded"}
+{"ts": "2026-03-11T13:29:00+00:00", "level": "ERROR", "service": "shipping", "message": "java.lang.OutOfMemoryError: Java heap space"}
+{"ts": "2026-03-11T13:29:00+00:00", "level": "ERROR", "service": "shipping", "message": "java.lang.OutOfMemoryError: Java heap space"}

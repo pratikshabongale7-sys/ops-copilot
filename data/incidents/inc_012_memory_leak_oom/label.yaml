@@ -1,0 +1,12 @@
+incident_id: inc_012
+root_cause: memory_leak_oom
+service: cart
+onset_minute: 15
+split: test
+expected_diagnosis: '''cart'' memory climbed steadily to its ~1GB limit, then the
+  pod was OOMKilled and restarted near minute 27 (memory dropped to baseline, errors
+  spiked). A memory leak is the likely cause.'
+key_signals:
+- memory_mb ramps steadily toward the limit
+- sudden memory drop + error spike = an OOM restart
+- '''OutOfMemoryError / OOMKilled'' in logs'

@@ -1,0 +1,14 @@
+[
+  {
+    "ts": "2026-03-20T09:00:00+00:00",
+    "service": "product-catalog",
+    "version": "v2.0.4",
+    "change": "code release"
+  },
+  {
+    "ts": "2026-03-20T09:10:00+00:00",
+    "service": "email",
+    "version": "v1.5.5",
+    "change": "config update"
+  }
+]
