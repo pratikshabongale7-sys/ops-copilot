@@ -1,0 +1,19 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# uv
+uv.lock  # optional: many teams DO commit this; remove this line if you want to
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
