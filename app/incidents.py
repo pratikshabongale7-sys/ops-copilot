@@ -91,6 +91,24 @@ def load_incident(folder: str | Path, *, with_label: bool = True) -> Incident:
     )
 
 
+def resolve_incident_folder(incident_id: str, root: str | Path = DATA_DIR) -> Path:
+    """Find an incident's folder from its id.
+
+    Accepts either the short id ('inc_001') or the full folder name
+    ('inc_001_bad_deploy'). The tools (Phase 2) use this so the agent can refer
+    to an incident by its id without knowing where it lives on disk.
+    """
+    root = Path(root)
+    if not root.exists():
+        raise FileNotFoundError(
+            f"No incidents at {root}. Run: uv run python data/generate_incidents.py"
+        )
+    for p in sorted(root.iterdir()):
+        if p.is_dir() and (p.name == incident_id or p.name.startswith(incident_id + "_")):
+            return p
+    raise FileNotFoundError(f"No incident matching id '{incident_id}' under {root}")
+
+
 def list_incidents(
     split: str | None = None, root: str | Path = DATA_DIR
 ) -> list[Incident]:

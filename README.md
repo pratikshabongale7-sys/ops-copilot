@@ -5,10 +5,16 @@ reason → act → observe → reflect loop over system telemetry (logs, metrics
 deploys) and returns a probable root cause with cited evidence and a suggested
 fix.
 
-> **Status:** Phase 0 — project skeleton (FastAPI + tests + Docker + LangSmith).
+> **Status:** Phase 3 — agent works (LangGraph loop over MCP tools, structured diagnosis).
 
 ## Tech
 FastAPI · LangGraph · LangChain · LangSmith · MCP · Docker · Kubernetes · AWS
+
+## Architecture
+LangGraph owns the reason-act loop; LangChain provides the model/tool/message
+abstractions; MCP is the hop from a tool object down to the telemetry server.
+
+![Architecture: LangGraph loop, LangChain abstractions, MCP tool-call path](docs/architecture.svg)
 
 ## Quickstart
 ```bash
