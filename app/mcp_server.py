@@ -26,34 +26,50 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from mcp.server.fastmcp import FastMCP
+from mcp.types import ToolAnnotations
 
 from app import tools
 
 mcp = FastMCP("ops-copilot-telemetry")
 
+# All four tools only READ incident files — they never modify anything, are safe
+# to call repeatedly, and touch only the local dataset (no external systems). We
+# declare that explicitly so a host can treat them as safe to auto-run. (An action
+# tool like `rollback_deploy` would instead be read_only=False, destructive=True,
+# so a host would gate it behind human approval — the "diagnose, don't act" line.)
+READ_ONLY = ToolAnnotations(
+    readOnlyHint=True,
+    destructiveHint=False,
+    idempotentHint=True,
+    openWorldHint=False,
+)
 
-@mcp.tool()
+
+@mcp.tool(annotations=READ_ONLY)
 def get_incident_overview(incident_id: str) -> dict:
     """Orientation for an incident: time window, services with telemetry, and
     log/deploy counts. Call this first to decide where to investigate."""
     return tools.get_incident_overview(incident_id)
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def search_logs(
     incident_id: str,
     level: str | None = None,
     service: str | None = None,
     contains: str | None = None,
     limit: int = 50,
-) -> list[dict]:
+) -> dict:
     """Search an incident's logs by level ('ERROR'/'WARN'/'INFO'), service, and/or
     a case-insensitive substring in the message. Returns up to `limit` lines,
     oldest first. Use level='ERROR' to find a failure's fingerprint."""
-    return tools.search_logs(incident_id, level, service, contains, limit)
+    logs = tools.search_logs(incident_id, level, service, contains, limit)
+    # Wrap in a dict so the tool result is never empty content (some LLM APIs
+    # reject a tool message whose content is an empty list).
+    return {"count": len(logs), "logs": logs}
 
 
-@mcp.tool()
+@mcp.tool(annotations=READ_ONLY)
 def query_metrics(
     incident_id: str,
     service: str | None = None,
@@ -65,11 +81,13 @@ def query_metrics(
     return tools.query_metrics(incident_id, service, metric)
 
 
-@mcp.tool()
-def get_deploys(incident_id: str) -> list[dict]:
+@mcp.tool(annotations=READ_ONLY)
+def get_deploys(incident_id: str) -> dict:
     """List recent deploy/config-change events (oldest first) to correlate a
     failure's onset with a release."""
-    return tools.get_deploys(incident_id)
+    deploys = tools.get_deploys(incident_id)
+    # Wrap so the result is never empty content (see search_logs note).
+    return {"count": len(deploys), "deploys": deploys}
 
 
 if __name__ == "__main__":

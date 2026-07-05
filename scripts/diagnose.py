@@ -30,9 +30,7 @@ def _print_diagnosis(inc_id, dx) -> None:
     print(f"  service    : {dx.service}")
     print(f"  confidence : {dx.confidence:.2f}")
     print(f"  fix        : {dx.suggested_fix}")
-    print("  evidence   :")
-    for e in dx.evidence:
-        print(f"    - {e}")
+    print(f"  evidence   : {dx.evidence}")
 
 
 def main() -> None:

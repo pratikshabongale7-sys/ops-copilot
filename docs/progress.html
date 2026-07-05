@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ops Copilot — Progress</title>
+<style>
+  :root{
+    --bg:#0e1116; --card:#161b22; --line:#2a3441; --tx:#e6edf3; --dim:#9aa7b4;
+    --lg:#8b8cf5; --mc:#2dd4bf; --ok:#3fb950;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--tx);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .deck{width:min(920px,94vw);height:min(600px,92vh);position:relative}
+  .slide{position:absolute;inset:0;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:44px 52px;display:none;flex-direction:column;opacity:0;transition:opacity .25s}
+  .slide.on{display:flex;opacity:1}
+  .kicker{color:var(--mc);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:38px;line-height:1.1;margin-bottom:16px;letter-spacing:-.5px}
+  h2{font-size:27px;margin-bottom:18px;letter-spacing:-.3px}
+  p{color:var(--dim);font-size:17px;max-width:60ch}
+  .lead{font-size:19px;color:var(--tx)}
+  ul{list-style:none;margin-top:8px}
+  li{padding:9px 0 9px 30px;position:relative;color:var(--tx);border-bottom:1px solid var(--line)}
+  li:last-child{border-bottom:0}
+  li::before{content:"";position:absolute;left:4px;top:17px;width:9px;height:9px;border-radius:2px;background:var(--mc)}
+  li small{display:block;color:var(--dim);font-size:14px;margin-top:2px}
+  .tag{display:inline-block;background:#0d1117;border:1px solid var(--line);color:var(--dim);
+    padding:5px 11px;border-radius:999px;font-size:13px;margin:4px 6px 0 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .box{background:#0d1117;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .box b{color:var(--tx)} .box span{color:var(--dim);font-size:14px}
+  .done{color:var(--ok);font-weight:700}
+  .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:10px;color:var(--dim);font-size:15px}
+  .flow b{color:var(--lg)} .flow .ar{color:var(--mc);font-weight:700}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .result{background:#0d1117;border:1px solid var(--line);border-left:3px solid var(--ok);
+    border-radius:10px;padding:16px 18px;margin-top:14px;font-family:ui-monospace,Menlo,monospace;font-size:14px;color:var(--tx)}
+  .result .k{color:var(--dim)}
+  footer{position:absolute;bottom:16px;left:52px;right:52px;display:flex;justify-content:space-between;
+    align-items:center;color:var(--dim);font-size:13px}
+  .nav{display:flex;gap:8px}
+  button{background:#0d1117;border:1px solid var(--line);color:var(--tx);border-radius:8px;
+    padding:7px 14px;cursor:pointer;font-size:14px}
+  button:hover{border-color:var(--mc)}
+  .count{font-variant-numeric:tabular-nums}
+  .hint{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);color:#55606c;font-size:12px}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+  <!-- 1 -->
+  <section class="slide on">
+    <div class="kicker">Portfolio project · progress</div>
+    <h1>Ops&nbsp;Copilot</h1>
+    <p class="lead">An AI agent that investigates a software incident from its telemetry and names the probable root cause — with evidence and a fix.</p>
+    <div style="margin-top:22px">
+      <span class="tag">Agentic AI</span><span class="tag">LangGraph</span><span class="tag">MCP</span>
+      <span class="tag">LangSmith</span><span class="tag">FastAPI</span><span class="tag">Docker</span>
+    </div>
+    <footer><span>Ops Copilot</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide">
+    <div class="kicker">The problem</div>
+    <h2>On-call debugging, automated</h2>
+    <p class="lead">When production breaks, an engineer spends the first 30 minutes pulling logs, scanning metrics, and checking recent deploys to find the cause.</p>
+    <p style="margin-top:14px">Ops Copilot does that first pass automatically — and it maps directly onto a QA / reliability background: automating the diagnosis work, instead of doing it by hand.</p>
+    <footer><span class="mono">reason → act → observe → conclude</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide">
+    <div class="kicker">How it works</div>
+    <h2>The agentic loop</h2>
+    <p>The agent is given one incident. It reasons, calls a tool to gather evidence, observes the result, and repeats — bounded by a step budget — until it can conclude.</p>
+    <div class="flow">
+      <b>Agent</b><span class="ar">→</span> calls a tool <span class="ar">→</span> <b>MCP server</b>
+      <span class="ar">→</span> logs / metrics / deploys <span class="ar">→</span> observe <span class="ar">↺</span> <b>Diagnosis</b>
+    </div>
+    <div class="grid" style="margin-top:20px">
+      <div class="box"><b>LangGraph</b><br><span>owns the loop (state + control flow)</span></div>
+      <div class="box"><b>LangChain</b><br><span>model, tools, messages, structured output</span></div>
+      <div class="box"><b>MCP</b><br><span>the hop to the telemetry tool server</span></div>
+      <div class="box"><b>LangSmith</b><br><span>traces every step for debugging</span></div>
+    </div>
+    <footer><span>Architecture</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide">
+    <div class="kicker">Built so far · Phases 0–3</div>
+    <h2>What's done <span class="done">✓</span></h2>
+    <ul>
+      <li>Service skeleton + tests + Docker + LangSmith <small>Phase 0 — FastAPI, CI-ready, observability wired</small></li>
+      <li>Labeled incident dataset <small>Phase 1 — 24 incidents, 6 failure classes, 18 train / 6 test, reproducible generator</small></li>
+      <li>MCP telemetry tools <small>Phase 2 — search_logs, query_metrics, get_deploys, overview — served over MCP</small></li>
+      <li>The agent <small>Phase 3 — LangGraph reason-act loop over the MCP tools → structured diagnosis</small></li>
+    </ul>
+    <footer><span>4 phases complete</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide">
+    <div class="kicker">It works</div>
+    <h2>A real diagnosis</h2>
+    <p>Given <span class="mono">inc_001</span> (a bad deploy), the agent investigated the metrics, read the error logs, correlated the deploy timing — and concluded correctly:</p>
+    <div class="result">
+      <div><span class="k">root cause :</span> bad_deploy &nbsp;<span class="done">✓ correct</span></div>
+      <div><span class="k">service&nbsp;&nbsp;&nbsp;&nbsp;:</span> checkout</div>
+      <div><span class="k">confidence :</span> 0.80</div>
+      <div><span class="k">fix&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span> roll back to v1.6.2, then test the change</div>
+    </div>
+    <p style="margin-top:12px;font-size:15px">Every step visible in the LangSmith trace — proof it investigated, not guessed.</p>
+    <footer><span>Result</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide">
+    <div class="kicker">What's next</div>
+    <h2>Roadmap</h2>
+    <ul>
+      <li>Phase 4 — Evaluation + the headline chart <small>run across the test set; single-shot LLM vs the agentic loop</small></li>
+      <li>Phase 5 — MLflow experiment tracking <small>compare agent versions and models on measured metrics</small></li>
+      <li>Phase 6 — Deploy on AWS + CI/CD <small>Docker → cloud, GitHub Actions pipeline</small></li>
+      <li>Optional — real Kubernetes + Chaos Mesh incidents</li>
+    </ul>
+    <footer><span>In progress</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide">
+    <div class="kicker">Keywords earned</div>
+    <h2>Stack</h2>
+    <div style="margin-top:6px">
+      <span class="tag">Agentic AI</span><span class="tag">LangGraph</span><span class="tag">LangChain</span>
+      <span class="tag">LangSmith</span><span class="tag">MCP</span><span class="tag">Groq / LLM APIs</span>
+      <span class="tag">structured output</span><span class="tag">FastAPI</span><span class="tag">Pydantic</span>
+      <span class="tag">Docker</span><span class="tag">pytest</span><span class="tag">Python</span>
+    </div>
+    <p style="margin-top:22px" class="lead">Next up on the resume: “Built an AI incident-diagnosis agent (LangGraph, MCP, LangSmith) evaluated on a labeled dataset.”</p>
+    <footer><span>Ops Copilot</span><div class="nav"><button onclick="go(-1)">Prev</button><button onclick="go(1)">Next</button></div></footer>
+  </section>
+
+</div>
+<div class="hint">← → arrow keys to navigate · <span class="count" id="c">1 / 7</span></div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];let i=0;
+  function show(n){slides[i].classList.remove('on');i=(n+slides.length)%slides.length;slides[i].classList.add('on');
+    document.getElementById('c').textContent=(i+1)+' / '+slides.length;}
+  function go(d){show(i+d);}
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')go(1);if(e.key==='ArrowLeft')go(-1);});
+</script>
+</body>
+</html>

@@ -37,10 +37,12 @@ class Diagnosis(BaseModel):
         description="The service where the problem originates (the true cause, "
         "not just where symptoms appear)."
     )
-    evidence: list[str] = Field(
-        default_factory=list,
+    evidence: str = Field(
+        default="",
         description="Concrete observations from the telemetry that support the "
-        "conclusion (e.g. 'error_rate jumped from 0.5 to 21 at minute 8').",
+        "conclusion, citing specific numbers (e.g. 'error_rate jumped from 0.5 to "
+        "21 at minute 8; deploy v1.6.3 landed at the same time'). Plain text — not "
+        "a list — so smaller models produce valid output reliably.",
     )
     suggested_fix: str = Field(
         description="A short, actionable recommendation (e.g. 'roll back v1.6.3')."

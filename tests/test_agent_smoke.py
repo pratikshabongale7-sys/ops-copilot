@@ -16,7 +16,7 @@ def test_diagnosis_schema_validates():
     dx = Diagnosis(
         root_cause="bad_deploy",
         service="checkout",
-        evidence=["error_rate jumped from 0.5 to 21 at minute 8"],
+        evidence="error_rate jumped from 0.5 to 21 at minute 8",
         suggested_fix="roll back v1.6.3",
         confidence=0.9,
     )

@@ -5,7 +5,7 @@ reason → act → observe → reflect loop over system telemetry (logs, metrics
 deploys) and returns a probable root cause with cited evidence and a suggested
 fix.
 
-> **Status:** Phase 3 — agent works (LangGraph loop over MCP tools, structured diagnosis).
+> **Status:** Phase 4 — evaluated (agentic loop vs single-shot LLM ablation).
 
 ## Tech
 FastAPI · LangGraph · LangChain · LangSmith · MCP · Docker · Kubernetes · AWS
@@ -56,10 +56,20 @@ uv run python app/incidents.py             # prints a summary of them
 Each incident folder has `logs.jsonl`, `metrics.json`, `deploys.json`, and a
 `label.yaml` (the ground-truth root cause). 6 failure classes, 18 train / 6 test.
 
+## Evaluation (Phase 4)
+```bash
+uv run python evaluation/run_eval.py --diagnoser single_shot  # one-prompt LLM
+uv run python evaluation/run_eval.py --diagnoser agent        # the agentic loop
+uv run python evaluation/run_eval.py --chart                  # docs/eval_results.png
+```
+Ablation on the held-out test set: does the agentic loop beat a single-shot LLM?
+(accuracy, macro-F1, confusion).
+
 ## Roadmap
 - [x] Phase 0 — skeleton
 - [x] Phase 1 — labeled incident dataset
-- [ ] Phase 2 — MCP tool servers (logs, metrics)
-- [ ] Phase 3 — LangGraph agentic loop
-- [ ] Phase 4 — eval + single-shot-vs-agent ablation
-- [ ] Phase 5 — deploy on AWS + CI/CD
+- [x] Phase 2 — MCP tool servers (logs, metrics)
+- [x] Phase 3 — LangGraph agentic loop
+- [x] Phase 4 — eval: single-shot vs agent ablation
+- [ ] Phase 5 — MLflow experiment tracking
+- [ ] Phase 6 — deploy on AWS + CI/CD

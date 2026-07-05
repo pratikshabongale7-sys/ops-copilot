@@ -13,6 +13,12 @@ venv/
 # uv
 uv.lock  # optional: many teams DO commit this; remove this line if you want to
 
+# MLflow local tracking store (local state, not source)
+mlruns/
+
+# Eval cache files (intermediate; regenerated per run)
+evaluation/results/*_cache.json
+
 # OS / editor
 .DS_Store
 .idea/

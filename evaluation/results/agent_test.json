@@ -1,0 +1,142 @@
+{
+  "diagnoser": "agent",
+  "split": "test",
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "per_incident": [
+    {
+      "id": "inc_004",
+      "true": "bad_deploy",
+      "pred": "bad_deploy",
+      "correct": true
+    },
+    {
+      "id": "inc_008",
+      "true": "db_connection_pool_exhaustion",
+      "pred": "db_connection_pool_exhaustion",
+      "correct": true
+    },
+    {
+      "id": "inc_012",
+      "true": "memory_leak_oom",
+      "pred": "memory_leak_oom",
+      "correct": true
+    },
+    {
+      "id": "inc_016",
+      "true": "downstream_timeout",
+      "pred": "downstream_timeout",
+      "correct": true
+    },
+    {
+      "id": "inc_020",
+      "true": "bad_config",
+      "pred": "bad_config",
+      "correct": true
+    },
+    {
+      "id": "inc_024",
+      "true": "slow_query_saturation",
+      "pred": "downstream_timeout",
+      "correct": false
+    }
+  ],
+  "metrics": {
+    "n": 6,
+    "accuracy": 0.833,
+    "macro_f1": 0.778,
+    "per_class": {
+      "bad_config": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "bad_deploy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "db_connection_pool_exhaustion": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "downstream_timeout": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.667,
+        "support": 1
+      },
+      "memory_leak_oom": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "slow_query_saturation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "confusion": {
+      "bad_config": {
+        "bad_config": 1,
+        "bad_deploy": 0,
+        "db_connection_pool_exhaustion": 0,
+        "downstream_timeout": 0,
+        "memory_leak_oom": 0,
+        "slow_query_saturation": 0
+      },
+      "bad_deploy": {
+        "bad_config": 0,
+        "bad_deploy": 1,
+        "db_connection_pool_exhaustion": 0,
+        "downstream_timeout": 0,
+        "memory_leak_oom": 0,
+        "slow_query_saturation": 0
+      },
+      "db_connection_pool_exhaustion": {
+        "bad_config": 0,
+        "bad_deploy": 0,
+        "db_connection_pool_exhaustion": 1,
+        "downstream_timeout": 0,
+        "memory_leak_oom": 0,
+        "slow_query_saturation": 0
+      },
+      "downstream_timeout": {
+        "bad_config": 0,
+        "bad_deploy": 0,
+        "db_connection_pool_exhaustion": 0,
+        "downstream_timeout": 1,
+        "memory_leak_oom": 0,
+        "slow_query_saturation": 0
+      },
+      "memory_leak_oom": {
+        "bad_config": 0,
+        "bad_deploy": 0,
+        "db_connection_pool_exhaustion": 0,
+        "downstream_timeout": 0,
+        "memory_leak_oom": 1,
+        "slow_query_saturation": 0
+      },
+      "slow_query_saturation": {
+        "bad_config": 0,
+        "bad_deploy": 0,
+        "db_connection_pool_exhaustion": 0,
+        "downstream_timeout": 1,
+        "memory_leak_oom": 0,
+        "slow_query_saturation": 0
+      }
+    }
+  },
+  "efficiency": {
+    "avg_latency_s": null,
+    "avg_llm_calls": null,
+    "avg_total_tokens": null
+  }
+}

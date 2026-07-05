@@ -24,7 +24,6 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from langchain_mcp_adapters.client import MultiServerMCPClient
-from langgraph.prebuilt import create_react_agent
 
 from app.schemas import ROOT_CAUSES, Diagnosis
 
@@ -61,6 +60,7 @@ you are confident, stop calling tools and write a final answer that states: the 
 root-cause category, the originating service, the specific evidence you found \
 (with numbers), and a recommended fix."""
 
+from langchain.agents import create_agent
 
 def _build_llm():
     """Create the chat model from env. Defaults to Groq (free tier).
@@ -76,26 +76,38 @@ def _build_llm():
             model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
             temperature=0,
         )
-    if provider == "openai":
-        from langchain_openai import ChatOpenAI
-
-        return ChatOpenAI(model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"), temperature=0)
     if provider == "google":
         from langchain_google_genai import ChatGoogleGenerativeAI
 
         return ChatGoogleGenerativeAI(
-            model=os.getenv("GOOGLE_MODEL", "gemini-2.5-flash"), temperature=0
+            model=os.getenv("GOOGLE_MODEL", "gemini-2.5-flash"),
+            temperature=0,
         )
+    # if provider == "openai":
+    #     from langchain_openai import ChatOpenAI
+    #
+    #     return ChatOpenAI(model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"), temperature=0)
     raise ValueError(f"Unknown LLM_PROVIDER '{provider}' (use groq|openai|google)")
 
 
-async def diagnose(incident_id: str) -> Diagnosis:
-    """Investigate one incident and return a structured Diagnosis.
+def _sum_tokens(messages) -> int | None:
+    """Sum total tokens across the AI messages, if the provider reported usage.
+    Returns None if no usage metadata is available (some providers omit it)."""
+    total, found = 0, False
+    for m in messages:
+        um = getattr(m, "usage_metadata", None)
+        if um and um.get("total_tokens"):
+            total += int(um["total_tokens"])
+            found = True
+    return total if found else None
 
-    This is the main entry point. It (a) loads the MCP tools, (b) runs the
-    reason-act loop, (c) extracts a structured Diagnosis from the agent's
-    conclusion.
-    """
+
+async def diagnose_verbose(incident_id: str) -> tuple[Diagnosis, dict]:
+    """Like diagnose(), but also returns efficiency stats for the eval:
+    {llm_calls, total_tokens}. llm_calls counts model turns in the loop plus the
+    final structured-extraction call."""
+    from langchain_core.messages import AIMessage
+
     llm = _build_llm()
 
     # 1. Connect to the MCP server and load its tools as LangChain tools.
@@ -111,7 +123,7 @@ async def diagnose(incident_id: str) -> Diagnosis:
     tools = await client.get_tools()
 
     # 2. Build a reason-act agent (the loop) and run it, bounded by STEP_BUDGET.
-    agent = create_react_agent(llm, tools, prompt=SYSTEM_PROMPT)
+    agent = create_agent(llm, tools, system_prompt=SYSTEM_PROMPT)
     task = (
         f"Investigate incident '{incident_id}' and determine its root cause. "
         f"Use the tools; refer to the incident by this id."
@@ -120,7 +132,8 @@ async def diagnose(incident_id: str) -> Diagnosis:
         {"messages": [{"role": "user", "content": task}]},
         config={"recursion_limit": STEP_BUDGET * 2},  # each step = model + tool node
     )
-    final_text = result["messages"][-1].content
+    messages = result["messages"]
+    final_text = messages[-1].content
 
     # 3. Turn the free-text conclusion into a strict Diagnosis object.
     structured = llm.with_structured_output(Diagnosis)
@@ -129,4 +142,13 @@ async def diagnose(incident_id: str) -> Diagnosis:
         "Keep the same root cause, service, evidence, fix, and confidence.\n\n"
         f"CONCLUSION:\n{final_text}"
     )
+
+    model_turns = sum(1 for m in messages if isinstance(m, AIMessage))
+    stats = {"llm_calls": model_turns + 1, "total_tokens": _sum_tokens(messages)}
+    return diagnosis, stats
+
+
+async def diagnose(incident_id: str) -> Diagnosis:
+    """Investigate one incident and return a structured Diagnosis (main entry point)."""
+    diagnosis, _ = await diagnose_verbose(incident_id)
     return diagnosis
