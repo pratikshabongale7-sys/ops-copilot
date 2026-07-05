@@ -1,0 +1,31 @@
+# Continuous Deployment — pushes the repo to the Hugging Face Space on every
+# successful push to main, so the live demo always reflects main. This is the
+# "→ build → deploy" half of the pipeline (HF builds the Docker image on its side).
+#
+# Setup required once (see PHASE6_SETUP_GUIDE.md):
+#   - Create a Docker Space on Hugging Face.
+#   - Add two GitHub repo secrets:  HF_TOKEN (a HF write token)  and  HF_SPACE
+#     (e.g. "your-username/ops-copilot").
+name: Deploy to Hugging Face Space
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history so the push to HF is clean
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE: ${{ secrets.HF_SPACE }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          # HF Spaces are git repos; push our main branch to the Space's main.
+          git push --force "https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" HEAD:main

@@ -1,0 +1,19 @@
+# Keep the build context small and the image clean.
+.venv/
+venv/
+__pycache__/
+*.pyc
+.git/
+.github/
+.idea/
+.vscode/
+.pytest_cache/
+.ruff_cache/
+mlruns/
+tests/
+evaluation/
+docs/
+scripts/
+uv.lock
+.env
+*.md

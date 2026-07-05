@@ -1,3 +1,13 @@
+---
+title: Ops Copilot
+emoji: 🔧
+colorFrom: indigo
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Ops Copilot
 
 Agentic incident-diagnosis assistant. Give it an alert or error; it runs a
@@ -5,10 +15,13 @@ reason → act → observe → reflect loop over system telemetry (logs, metrics
 deploys) and returns a probable root cause with cited evidence and a suggested
 fix.
 
-> **Status:** Phase 4 — evaluated (agentic loop vs single-shot LLM ablation).
+> **Status:** Phase 6 — deployed (FastAPI service, Docker, CI/CD, live demo).
 
 ## Tech
-FastAPI · LangGraph · LangChain · LangSmith · MCP · Docker · Kubernetes · AWS
+FastAPI · LangGraph · LangChain · LangSmith · MCP · Docker · CI/CD · MLflow
+
+_(The block at the very top is Hugging Face Space config — it tells HF to build the
+Dockerfile and serve on port 7860. GitHub renders it as a small YAML header.)_
 
 ## Architecture
 LangGraph owns the reason-act loop; LangChain provides the model/tool/message
@@ -65,11 +78,18 @@ uv run python evaluation/run_eval.py --chart                  # docs/eval_result
 Ablation on the held-out test set: does the agentic loop beat a single-shot LLM?
 (accuracy, macro-F1, confusion).
 
+## Run the service
+```bash
+uv run uvicorn app.main:app --reload   # http://localhost:8000  (demo page + /docs)
+docker build -t ops-copilot . && docker run -p 7860:7860 --env-file .env ops-copilot
+```
+`POST /diagnose {"incident_id": "inc_001"}` runs the agent and returns a Diagnosis.
+
 ## Roadmap
 - [x] Phase 0 — skeleton
 - [x] Phase 1 — labeled incident dataset
 - [x] Phase 2 — MCP tool servers (logs, metrics)
 - [x] Phase 3 — LangGraph agentic loop
 - [x] Phase 4 — eval: single-shot vs agent ablation
-- [ ] Phase 5 — MLflow experiment tracking
-- [ ] Phase 6 — deploy on AWS + CI/CD
+- [x] Phase 5 — MLflow experiment tracking
+- [x] Phase 6 — deploy (Docker + CI/CD + live demo)

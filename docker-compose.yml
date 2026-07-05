@@ -1,11 +1,10 @@
-# docker-compose lets you start the whole stack with one command.
-# Right now it's just the API. In later phases you'll add Postgres, the demo
-# app, etc. as more services here.
+# docker-compose lets you start the service with one command: `docker compose up`.
 services:
   api:
     build: .
     ports:
-      - "8000:8000"   # host:container — open http://localhost:8000/health
+      - "7860:7860"   # host:container — matches the Dockerfile's port. Open
+                       # http://localhost:7860  (demo page)  or  /health
     env_file:
       - .env
     restart: unless-stopped
