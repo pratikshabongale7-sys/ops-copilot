@@ -17,15 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # full history so the push to HF is clean
 
-      - name: Push to Hugging Face Space
+      - name: Push a clean snapshot to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_SPACE: ${{ secrets.HF_SPACE }}
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          # HF Spaces are git repos; push our main branch to the Space's main.
-          git push --force "https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" HEAD:main
+          # Build a single fresh commit (no history) containing ONLY what the Space
+          # needs. This avoids pushing binaries buried in git history (e.g. an old
+          # mlflow.db) and keeps the Space repo minimal.
+          git checkout --orphan hf-deploy
+          rm -rf docs evaluation tests scripts mlruns mlartifacts mlflow.db *.db __pycache__ 2>/dev/null || true
+          git add -A
+          git commit -m "Deploy from GitHub Actions"
+          git push --force "https://user:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" hf-deploy:main
