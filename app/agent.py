@@ -23,6 +23,7 @@ import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
+from langchain.agents import create_agent
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
 from app.schemas import ROOT_CAUSES, Diagnosis
@@ -60,7 +61,6 @@ you are confident, stop calling tools and write a final answer that states: the 
 root-cause category, the originating service, the specific evidence you found \
 (with numbers), and a recommended fix."""
 
-from langchain.agents import create_agent
 
 def _build_llm():
     """Create the chat model from env. Defaults to Groq (free tier).
@@ -76,13 +76,13 @@ def _build_llm():
             model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
             temperature=0,
         )
-    if provider == "google":
-        from langchain_google_genai import ChatGoogleGenerativeAI
-
-        return ChatGoogleGenerativeAI(
-            model=os.getenv("GOOGLE_MODEL", "gemini-2.5-flash"),
-            temperature=0,
-        )
+    # if provider == "google":
+    #     from langchain_google_genai import ChatGoogleGenerativeAI
+    #
+    #     return ChatGoogleGenerativeAI(
+    #         model=os.getenv("GOOGLE_MODEL", "gemini-2.5-flash"),
+    #         temperature=0,
+    #     )
     # if provider == "openai":
     #     from langchain_openai import ChatOpenAI
     #
