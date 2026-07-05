@@ -11,7 +11,7 @@ venv/
 .ruff_cache/
 
 # uv
-uv.lock  # optional: many teams DO commit this; remove this line if you want to
+#uv.lock  # optional: many teams DO commit this; remove this line if you want to
 
 # MLflow local tracking store (local state, not source)
 mlruns/
