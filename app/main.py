@@ -75,6 +75,7 @@ def home() -> str:
 <style>
  body{font:16px system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;color:#111}
  h1{margin-bottom:4px} .sub{color:#666;margin-top:0}
+ .note{color:#8a6d00;background:#fff7d6;border:1px solid #f0e3a0;padding:8px 12px;border-radius:8px;font-size:14px;margin:12px 0}
  select,button{font-size:16px;padding:8px 12px;border-radius:8px;border:1px solid #ccc}
  button{background:#4f46e5;color:#fff;border:0;cursor:pointer}
  button:disabled{opacity:.5} pre{background:#0e1116;color:#e6edf3;padding:16px;border-radius:10px;white-space:pre-wrap}
@@ -82,6 +83,7 @@ def home() -> str:
 </style></head><body>
 <h1>Ops Copilot</h1>
 <p class="sub">An AI agent that diagnoses an incident's root cause from its telemetry.</p>
+<p class="note">⏳ Heads up: this runs on a free LLM tier, so a diagnosis can take up to a minute (the agent makes several tool calls and waits out rate limits). It's working — give it a moment.</p>
 <div class="row">
   <select id="inc"></select>
   <button id="go" onclick="run()">Diagnose</button>
@@ -96,7 +98,7 @@ async function load(){
 async function run(){
   const btn=document.getElementById('go'), out=document.getElementById('out');
   const id=document.getElementById('inc').value;
-  btn.disabled=true; out.textContent='Investigating '+id+'… (the agent is calling its tools)';
+  btn.disabled=true; out.textContent='Investigating '+id+'… the agent is calling its tools. This can take up to a minute on the free tier — hang tight.';
   try{
     const r=await fetch('/diagnose',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({incident_id:id})});
     const d=await r.json();
