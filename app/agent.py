@@ -25,6 +25,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from langchain.agents import create_agent
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from langgraph.errors import GraphRecursionError
 
 from app.schemas import ROOT_CAUSES, Diagnosis
 
@@ -36,7 +37,7 @@ SERVER_PATH = Path(__file__).resolve().parent / "mcp_server.py"
 
 # How many reason->act steps the agent may take before we force it to conclude.
 # A guardrail against runaway loops (and runaway token cost).
-STEP_BUDGET = int(os.getenv("AGENT_STEP_BUDGET", "12"))
+STEP_BUDGET = int(os.getenv("AGENT_STEP_BUDGET", "15"))
 
 SYSTEM_PROMPT = f"""You are an on-call SRE assistant. You investigate a software \
 incident and determine its root cause from telemetry.
@@ -73,7 +74,23 @@ def _build_llm():
         from langchain_groq import ChatGroq
 
         return ChatGroq(
-            model=os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile"),
+            model=os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"),
+            temperature=0,
+            # Free-tier TPM is tight and the agent fires bursts of requests; let the
+            # client wait out the short "try again in Ns" rate-limit refills instead
+            # of giving up after 2 tries.
+            max_retries=int(os.getenv("GROQ_MAX_RETRIES", "8")),
+        )
+    if provider == "aru":
+        # A self-hosted, OpenAI-COMPATIBLE endpoint (vLLM / LiteLLM / Ollama / LM
+        # Studio, etc.). ChatOpenAI works with any server that speaks the OpenAI API
+        # — we just override the base URL and key.
+        from langchain_openai import ChatOpenAI
+
+        return ChatOpenAI(
+            model=os.getenv("ARU_MODEL", "default"),
+            base_url=os.getenv("ARU_BASE_URL"),   # e.g. https://his-server.example/v1
+            api_key=os.getenv("ARU_API_KEY"),
             temperature=0,
         )
     # if provider == "google":
@@ -128,10 +145,25 @@ async def diagnose_verbose(incident_id: str) -> tuple[Diagnosis, dict]:
         f"Investigate incident '{incident_id}' and determine its root cause. "
         f"Use the tools; refer to the incident by this id."
     )
-    result = await agent.ainvoke(
-        {"messages": [{"role": "user", "content": task}]},
-        config={"recursion_limit": STEP_BUDGET * 2},  # each step = model + tool node
-    )
+    try:
+        result = await agent.ainvoke(
+            {"messages": [{"role": "user", "content": task}]},
+            config={"recursion_limit": STEP_BUDGET * 2},  # each step = model + tool node
+        )
+    except GraphRecursionError:
+        # The agent kept investigating and never committed within its step budget.
+        # That's a real failure mode (a non-conclusion), so record it as 'unknown'
+        # rather than crashing the whole eval — one runaway incident is a miss, not
+        # a reason to abort.
+        dx = Diagnosis(
+            root_cause="unknown",
+            service="",
+            evidence="Agent exceeded its step budget without reaching a conclusion.",
+            suggested_fix="Investigate manually / raise the step budget.",
+            confidence=0.0,
+        )
+        return dx, {"llm_calls": STEP_BUDGET, "total_tokens": None}
+
     messages = result["messages"]
     final_text = messages[-1].content
 
