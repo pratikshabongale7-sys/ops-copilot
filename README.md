@@ -1,12 +1,7 @@
----
-title: Ops Copilot
-emoji: 🔧
-colorFrom: indigo
-colorTo: green
-sdk: docker
-app_port: 7860
-pinned: false
----
+
+
+https://github.com/user-attachments/assets/10a2e6d5-7144-4cc4-9788-0b3f0361ade4
+
 
 # Ops Copilot
 
